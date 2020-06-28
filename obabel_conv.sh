@@ -8,7 +8,7 @@ tmp_var=1
 while read f
 do
 	res=$(obabel ---errorlevel 0 -:"$f" -ocan 2>&1)
-	echo $res | awk '{print $1;}'
+	echo $res | awk '{print $4;}'
 	>&2 echo "$tmp_var. converting $f"
 	let "tmp_var+=1"
 done < $file
